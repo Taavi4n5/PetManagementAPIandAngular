@@ -1,0 +1,121 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+<changeSet author="TaaviAnsper" id="insert_data">
+
+    <insert tableName="pet_type">
+        <column name="type" value="Cat"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Dog"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Hamster"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Rabbit"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Horse"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Parrot"/>
+    </insert>
+    <insert tableName="pet_type">
+        <column name="type" value="Turtle"/>
+    </insert>
+
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Black"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="White"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Brown"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Grey"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Yellow"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Orange"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Red"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Green"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Blue"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Purple"/>
+    </insert>
+    <insert tableName="pet_fur_colour">
+        <column name="fur_colour" value="Pink"/>
+    </insert>
+
+    <insert tableName="pet_country">
+        <column name="country" value="Estonia"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Latvia"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Lithuania"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Finland"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Sweden"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Norway"/>
+    </insert>
+    <insert tableName="pet_country">
+        <column name="country" value="Denmark"/>
+    </insert>
+
+    <insert tableName="pets">
+        <column name="name" value="Fido"/>
+        <column name="code" valueNumeric="202211151535" />
+        <column name="type_id" valueNumeric="2"/>
+        <column name="fur_colour_id" valueNumeric="3"/>
+        <column name="country_id" valueNumeric="3"/>
+    </insert>
+    <insert tableName="pets">
+        <column name="name" value="Mittens"/>
+        <column name="code" valueNumeric="202211151536" />
+        <column name="type_id" valueNumeric="1"/>
+        <column name="fur_colour_id" valueNumeric="1"/>
+        <column name="country_id" valueNumeric="1"/>
+    </insert>
+    <insert tableName="pets">
+        <column name="name" value="Charles"/>
+        <column name="code" valueNumeric="202211151537" />
+        <column name="type_id" valueNumeric="5"/>
+        <column name="fur_colour_id" valueNumeric="2"/>
+        <column name="country_id" valueNumeric="6"/>
+    </insert>
+
+    <insert tableName="users">
+        <column name="name" value="John"/>
+        <column name="password" value="$2a$10$61XVEilu3KxxmiXe/Edare/ZayMiQjuJ4pyzFTcf7sYX8yllllcEO"/>
+    </insert>
+    <insert tableName="users">
+        <column name="name" value="Mary"/>
+        <column name="password" value="$2a$10$pGC92Pd.otObUt0UJOqSye9trmBR/4Em0v4Nvrp4fHUOgIqnhMQqC"/>
+    </insert>
+    <insert tableName="users">
+        <column name="name" value="Tommy"/>
+        <column name="password" value="$2a$10$ux4V9zlBIS6t0QBOgFOPKu6rU6YEJzVlEeTtaKNecf/xkblnBpoX6"/>
+    </insert>
+
+</changeSet>
+    </databaseChangeLog>

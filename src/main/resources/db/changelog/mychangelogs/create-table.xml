@@ -1,0 +1,73 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<changeSet author="TaaviAnsper" id="create_pets_table">
+    <createTable tableName="pets">
+        <column name="id" type="INTEGER" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false" />
+        </column>
+        <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="code" type="LONG">
+            <constraints nullable="false"/>
+        </column>
+        <column name="type_id" type="INTEGER">
+            <constraints nullable="false"/>
+        </column>
+        <column name="fur_colour_id" type="INTEGER">
+            <constraints nullable="false"/>
+        </column>
+        <column name="country_id" type="INTEGER">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <createTable tableName="pet_type">
+        <column name="id" type="INTEGER" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <createTable tableName="pet_fur_colour">
+        <column name="id" type="INTEGER" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false" />
+        </column>
+        <column name="fur_colour" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <createTable tableName="pet_country">
+        <column name="id" type="INTEGER" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false" />
+        </column>
+        <column name="country" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="pets" baseColumnNames="type_id"
+                             referencedTableName="pet_type" referencedColumnNames="id" constraintName="fk_pet_pets_type"/>
+    <addForeignKeyConstraint baseTableName="pets" baseColumnNames="fur_colour_id"
+                             referencedTableName="pet_fur_colour" referencedColumnNames="id" constraintName="fk_pets_pet_fur_colour"/>
+    <addForeignKeyConstraint baseTableName="pets" baseColumnNames="country_id"
+                             referencedTableName="pet_country" referencedColumnNames="id" constraintName="fk_pets_pet_country"/>
+    <createTable tableName="users">
+        <column name="id" type="INTEGER" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false" />
+        </column>
+        <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="password" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>
