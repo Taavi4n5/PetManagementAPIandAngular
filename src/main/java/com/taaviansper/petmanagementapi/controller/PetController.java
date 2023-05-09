@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200") // This is to allow the Angular app to access the API
+@CrossOrigin // This is to allow the Angular app to access the API
 @RestController
 @RequestMapping("/api/pets")
 public class PetController {

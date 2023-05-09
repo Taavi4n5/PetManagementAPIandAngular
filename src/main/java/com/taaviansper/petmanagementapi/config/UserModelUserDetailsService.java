@@ -15,6 +15,7 @@ public class UserModelUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository ur;
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserModel> userModel = ur.findByName(username);

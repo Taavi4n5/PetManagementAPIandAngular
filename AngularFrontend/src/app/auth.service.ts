@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {catchError, map, Observable, of, tap} from 'rxjs';
-import {User} from './userInterfaces';
 
 
 interface Token {
@@ -17,22 +16,18 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(name: string, password: string): Observable<Response> {
+  login(name: string, password: string): Observable<boolean> {
     const authRequest = { name, password };
-    return this.http.post<Response>(`${this.apiUrl}/login`, authRequest);
-  }
-
-  authenticate(user: User): Observable<boolean> {
-    return this.http.post<Token>(`${this.apiUrl}/authenticate`, user).pipe(
+    return this.http.post<Response>(`${this.apiUrl}/login`, authRequest).pipe(
 
       tap((response: any) => {
         // Set the JWT token and user info in local storage
         this.token = response.message;
-        localStorage.setItem('currentUser', JSON.stringify({ username: user.name, token: this.token }));
+        localStorage.setItem('currentUser', JSON.stringify({ username: name, token: this.token }));
       }),
       map((response: any) => {
         // Return true if login successful, false otherwise
-        return response.token != null;
+        return response.status === 200;
       }),
       catchError((error: any) => {
         console.log(error);
