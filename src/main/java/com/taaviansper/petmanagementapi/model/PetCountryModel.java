@@ -1,9 +1,11 @@
 package com.taaviansper.petmanagementapi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "pet_country")
 public class PetCountryModel {
     @Id
@@ -31,14 +33,6 @@ public class PetCountryModel {
         this.Country = country;
     }
 
-    public PetCountryModel(Integer id, String country) {
-        this.Id = id;
-        this.Country = country;
-    }
-
-    public PetCountryModel(Integer id) {
-        this.Id = id;
-    }
 
     @Override
     public String toString(){

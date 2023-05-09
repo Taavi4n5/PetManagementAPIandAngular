@@ -1,8 +1,10 @@
 package com.taaviansper.petmanagementapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "pet_type")
 public class PetTypeModel {
     @Id
@@ -14,14 +16,6 @@ public class PetTypeModel {
 
     public PetTypeModel() {}
 
-    public PetTypeModel(Integer id, String type) {
-        this.Id = id;
-        this.Type = type;
-    }
-
-    public PetTypeModel(Integer id) {
-        this.Id = id;
-    }
 
     public Integer getId() {
         return Id;

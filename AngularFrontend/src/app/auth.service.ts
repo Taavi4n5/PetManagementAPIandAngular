@@ -3,10 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {catchError, map, Observable, of, tap} from 'rxjs';
 
 
-interface Token {
-  token: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,9 +1,11 @@
 package com.taaviansper.petmanagementapi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "pet_fur_colour")
 public class PetFurColourModel {
     @Id
@@ -29,15 +31,6 @@ public class PetFurColourModel {
 
     public void setFurColour(String colour) {
         this.FurColour = FurColour;
-    }
-
-    public PetFurColourModel(Integer id, String FurColour) {
-        this.Id = id;
-        this.FurColour = FurColour;
-    }
-
-    public PetFurColourModel(Integer id) {
-        this.Id = id;
     }
 
     @Override
